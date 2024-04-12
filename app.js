@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 
 const userRouter = require('./Routes/user');
+const notesRouter = require('./Routes/notes');
 
 const app = express();
 
@@ -11,6 +12,7 @@ dotenv.config();
 
 app.use(bodyParser.json());
 app.use(userRouter);
+app.use(notesRouter);
 
 mongoose.connect(process.env.MONGO_DB_CREDENTIAL)
 .then(()=>{

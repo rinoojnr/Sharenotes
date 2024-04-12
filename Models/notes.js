@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const notesSchema = new Schema({
     userid: {
-        type: Schema.types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'user'
     },
     category: {
@@ -16,6 +16,10 @@ const notesSchema = new Schema({
         required: true
     },
     title: {
+        type: String,
+        required: true
+    },
+    content: {
         type: String,
         required: true
     },
